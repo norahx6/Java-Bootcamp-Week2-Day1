@@ -1,7 +1,6 @@
 package Week1.Day5;
 
 public class Account {
-
     private String id;
     private String name;
     private int balance=0;
@@ -26,22 +25,33 @@ public class Account {
     public int getBalance(){
         return balance;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
     public int credit(int amount){
-        amount=100;
-        balance = amount + balance;
-        return balance;
+        return balance+=amount;
     }
 
     public int debit(int amount) {
         if (amount <= balance) {
-            balance=  balance - amount ;
+            return balance-amount ;
         } else {
             System.out.println("Amount exceeded balance");
         }
-        return balance;
+        return 0;
     }
     public int transferTo(Account a2, int amount) {
-        if (amount >= balance) {
+        if (amount <= balance) {
             System.out.println(amount);
         } else {
             System.out.println("Amount is exceeded balance");
