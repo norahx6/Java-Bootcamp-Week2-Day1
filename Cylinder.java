@@ -5,39 +5,41 @@ public class Cylinder extends Circle {
 
     private double height = 1.0;
 
-    public Cylinder(double radius ){
+    public Cylinder() {
 
+    }
+
+    public Cylinder(double radius) {
         super(radius);
     }
 
-    public Cylinder(double radius, double height ){
+    public Cylinder(double radius, double height) {
 
         super(radius);
-        this.height=height;
+        this.height = height;
     }
 
-    public Cylinder(double radius, double height, String color){
+    public Cylinder(double radius, double height, String color) {
 
-        super(radius,color);
-        this.height=height;
+        super(radius, color);
+        this.height = height;
     }
 
-    public double getheight (){
+    public double getheight() {
 
         return height;
     }
 
-    public void setHeight(double height){
-
+    public void setHeight(double height) {
+        this.height = height;
 
     }
 
-    public double getvolume (){
+    public double getvolume() {
 
-        return height * getRadius();
-    }
-    public static void main(String[] args) {
-
+        double volume = ((height * super.getRadius() * super.getRadius() * 22) / 7);
+        System.out.println("volume = ");
+        return volume;
     }
 
 }// end

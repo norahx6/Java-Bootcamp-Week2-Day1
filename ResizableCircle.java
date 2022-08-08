@@ -1,19 +1,23 @@
 package Day1;
 
-public class ResizableCircle extends Circle2{
+public class ResizableCircle extends Circle2 implements Resizable{
 
     public ResizableCircle(double radius){
+
         super(radius);
     }
 
     @Override
     public String toString() {
         return "ResizableCircle{" +
-                "radius=" + radius +
+                "radius=" + super.getRadius() +
                 '}';
     }
 
-    public double resize(int precent){
-        return radius = precent / 100.0 ;
+    @Override
+    public void resize(int precent){
+
+        double radiusresize = super.getRadius() * precent / 100.0;
+        System.out.println("resize = " + radiusresize);
     }
 }
